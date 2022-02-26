@@ -14,7 +14,7 @@
 - `stem` 的输出进入 `dark2`，经过一个卷积模块，维度提升一倍后尺寸减半。而后经过 `CSPLayer`，`CSPLayer` 的结构和残差网络相似，一个分支只对输入卷积一次，零一个分支进行深度特征提取，深度的层数取决于 `backbone` 的 `depth_factor` 参数，而后两个分支的输出按照通道数拼接到一起，完成升维。
 - `dark3, dark4, dark5` 的东西和 `dark2` 一致，无非是尺寸减半，通道数翻倍，同理得到 `dark3, dark4, dark5` 的输出。
 
-![](CSPLayer.png)
+![](https://raw.githubusercontent.com/Lan-ping/blog_content/main/blogImg/220225-fig1.png)
 
 这里补充一下：
 
@@ -26,7 +26,7 @@
 
 获取 `backbone` 的 `dark3, dark4, dark5` 的输出作为输入。这里描述太复杂了，简单的画图展示一下大概结构，精细的结构还是要看源代码：
 
-![](neck.png)
+![](https://raw.githubusercontent.com/Lan-ping/blog_content/main/blogImg/220225-fig2.png)
 
 ### head
 
